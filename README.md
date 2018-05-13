@@ -8,7 +8,13 @@ Como os arquivos são do tipo [fixed width](https://readr.tidyverse.org/referenc
 
 ## Installation
 
-You can install rfbCNPJ from github with:
+You can install rfbCNPJ from CRAN with:
+
+``` r
+install.packages("rfbCNPJ")
+```
+
+You can install the latest version of `rfbCNPJ` from github with:
 
 ``` r
 # install.packages("devtools")
