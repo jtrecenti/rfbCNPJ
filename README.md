@@ -148,7 +148,19 @@ socios
 
 ## Download de arquivos binários
 
-Você pode baixar os dados dos arquivos binários em `.rds` aqui:
+Você pode carregar os arquivos binários diretamente da web usando a função
+`rfb_import()`. Essa função baixa os arquivos binários diretamente do
+[Dropbox](https://www.dropbox.com/sh/tneczglkt11co0b/AABuRuJR02w2QcUbuhSl1XvLa?dl=0). 
+Você pode baixar usando o parâmetro `type=`, com as opções "all" 
+(tibble complexa com list columns), "empresas" (tibble retangular) e 
+"socios" (tibble retangular).
+
+``` r
+empresas <- rfb_import("empresas")
+```
+
+Você também pode baixar os dados dos arquivos binários em `.rds` desses links
+com arquivos armazenados diretamente no dropbox:
 
 - [base_completa.rds (list-column)](https://www.dropbox.com/s/js3lvm0ogpxcjch/rfb.rds?dl=1)
 - [empresas](https://www.dropbox.com/s/9h06mn9rzml4d2h/rfb_empresas.rds?dl=1)
