@@ -1,4 +1,4 @@
-[![Travis-CI Build Status](https://travis-ci.org/jtrecenti/rfbCNPJ.svg?branch=master)](https://travis-ci.org/jtrecenti/rfbCNPJ) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/jtrecenti/rfbCNPJ?branch=master&svg=true)](https://ci.appveyor.com/project/jtrecenti/rfbCNPJ)
+[![Travis-CI Build Status](https://travis-ci.org/jtrecenti/rfbCNPJ.svg?branch=master)](https://travis-ci.org/jtrecenti/rfbCNPJ) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/jtrecenti/rfbCNPJ?branch=master&svg=true)](https://ci.appveyor.com/project/jtrecenti/rfbCNPJ)[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rfbCNPJ)](https://cran.r-project.org/package=rfbCNPJ)
 
 # rfbCNPJ
 
