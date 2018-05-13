@@ -2,6 +2,10 @@
 
 # rfbCNPJ
 
+O pacote `rfbCNPJ` baixa e lê os arquivos contendo a lista de todas as empresas do Brasil, disponibilizado pela [Receita Federal em 15 de dezembro de 2017](http://idg.receita.fazenda.gov.br/orientacao/tributaria/cadastros/cadastro-nacional-de-pessoas-juridicas-cnpj/dados-abertos-do-cnpj). São duas tabelas por UF: i) empresas, contendo informações como CNPJ, nome da empresa e ii) socios, contendo quadro de sócios.
+
+Como os arquivos são do tipo [fixed width](https://readr.tidyverse.org/reference/read_fwf.html), algumas pessoas podem ter dificuldade para ler e empilhar os arquivos no R. Esse pacote facilita as operações de download e leitura.
+
 ## Installation
 
 You can install rfbCNPJ from github with:
@@ -39,9 +43,50 @@ dados <- rfb_read_fir(path) # equivalente
 
 ## Carregando dados
 
-Os dados são carregados numa tabela complexa com duas *list-columns*. A primeira
-coluna complexa mostra dados das empresas, e a segunda mostra dados dos sócios.
+Os dados são carregados numa tabela complexa com duas *list-columns*. 
+
+``` r
+library(tibble)
+print(dados, n = 27)
+```
+
+```
+# A tibble: 27 x 3
+   file         empresa                  socio                   
+   <chr>        <list>                   <list>                  
+ 1 D71214AC.txt <tibble [15,690 × 3]>    <tibble [26,268 × 6]>   
+ 2 D71214AL.txt <tibble [60,067 × 3]>    <tibble [109,762 × 6]>  
+ 3 D71214AM.txt <tibble [64,306 × 3]>    <tibble [121,095 × 6]>  
+ 4 D71214AP.txt <tibble [15,941 × 3]>    <tibble [28,063 × 6]>   
+ 5 D71214BA.txt <tibble [422,396 × 3]>   <tibble [787,637 × 6]>  
+ 6 D71214CE.txt <tibble [193,654 × 3]>   <tibble [352,841 × 6]>  
+ 7 D71214DF.txt <tibble [194,734 × 3]>   <tibble [368,607 × 6]>  
+ 8 D71214ES.txt <tibble [179,150 × 3]>   <tibble [354,358 × 6]>  
+ 9 D71214GO.txt <tibble [328,524 × 3]>   <tibble [619,810 × 6]>  
+10 D71214MA.txt <tibble [123,736 × 3]>   <tibble [201,854 × 6]>  
+11 D71214MG.txt <tibble [962,930 × 3]>   <tibble [1,916,405 × 6]>
+12 D71214MS.txt <tibble [102,208 × 3]>   <tibble [189,673 × 6]>  
+13 D71214MT.txt <tibble [141,464 × 3]>   <tibble [262,358 × 6]>  
+14 D71214PA.txt <tibble [159,079 × 3]>   <tibble [274,004 × 6]>  
+15 D71214PB.txt <tibble [79,275 × 3]>    <tibble [138,596 × 6]>  
+16 D71214PE.txt <tibble [224,184 × 3]>   <tibble [426,520 × 6]>  
+17 D71214PI.txt <tibble [61,627 × 3]>    <tibble [105,008 × 6]>  
+18 D71214PR.txt <tibble [708,109 × 3]>   <tibble [1,392,658 × 6]>
+19 D71214RJ.txt <tibble [843,040 × 3]>   <tibble [1,708,931 × 6]>
+20 D71214RN.txt <tibble [80,562 × 3]>    <tibble [150,411 × 6]>  
+21 D71214RO.txt <tibble [62,385 × 3]>    <tibble [109,774 × 6]>  
+22 D71214RR.txt <tibble [11,908 × 3]>    <tibble [21,737 × 6]>   
+23 D71214RS.txt <tibble [670,093 × 3]>   <tibble [1,350,159 × 6]>
+24 D71214SC.txt <tibble [498,511 × 3]>   <tibble [974,351 × 6]>  
+25 D71214SE.txt <tibble [63,303 × 3]>    <tibble [114,081 × 6]>  
+26 D71214SP.txt <tibble [2,730,412 × 3]> <tibble [5,585,988 × 6]>
+27 D71214TO.txt <tibble [51,629 × 3]>    <tibble [89,911 × 6]>
+```
+
+A primeira coluna complexa mostra dados das empresas, e a segunda mostra dados dos sócios.
 Para carregar uma dessas listas, use `tidyr::unnest()`.
+
+
 
 Empresas: (nesse caso, `dados` representa a base completa da receita).
 
