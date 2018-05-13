@@ -6,7 +6,7 @@ Description: Downloads and parses data from official site on RFB (IDG Receita).
     Data are collected from IDG site (http://idg.receita.fazenda.gov.br) and 
     updated in 2017. There are more than 9 million companies IDs and 17 million
     partner info.
-Depends: R (>= 3.4.4)
+Depends: R (>= 3.4)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
