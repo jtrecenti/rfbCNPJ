@@ -1,6 +1,6 @@
 Package: rfbCNPJ
 Title: Downloads and parses data from RFB
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: person("Julio", "Trecenti", email = "jtrecenti@curso-r.com", role = c("aut", "cre"))
 Description: Downloads and parses data from official site on RFB (IDG Receita). 
     Data are collected from IDG site (http://idg.receita.fazenda.gov.br) and 
