@@ -63,3 +63,32 @@ rfb_download <- function(ufs = NULL, path = ".", verbose = TRUE) {
   links <- rfb_get_links(ufs)
   purrr::map_chr(links, rfb_download_file, path = path, verbose = verbose)
 }
+
+
+#' Import data from binary files
+#'
+#' Downloads and reads data directly from Kaggle Datasets, where we have uploaded parsed data.
+#'
+#' @param type if \code{type="all"}, download list-column tibble containing all data. If \code{type="empresas"}, downloads rectangular database of companies. If \code{type="socios"}, downloads rectangular database of partners.
+#'
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' empresas <- rfb_import("empresas")
+#' }
+rfb_import <- function(type = c("all", "empresas", "socios")) {
+  type <- match.arg(type)
+  link <- switch(
+    type,
+    all = "https://www.dropbox.com/s/js3lvm0ogpxcjch/rfb.rds?dl=1",
+    empresas = "https://www.dropbox.com/s/9h06mn9rzml4d2h/rfb_empresas.rds?dl=1",
+    socios = "https://www.dropbox.com/s/67rs8fiv77gu73f/rfb_socios.rds?dl=1"
+  )
+  tmp <- tempfile(fileext = ".rds")
+  httr::GET(link, httr::write_disk(tmp, overwrite = TRUE), httr::progress())
+  message("Download finished. Loading data into R...")
+  d <- readRDS(tmp)
+  file.remove(tmp)
+  d
+}
