@@ -2,7 +2,7 @@
 % Please edit documentation in R/download.R
 \name{rfb_download}
 \alias{rfb_download}
-\title{Download rfb files}
+\title{Download RFB files}
 \usage{
 rfb_download(ufs = NULL, path = ".", verbose = TRUE)
 }
@@ -19,7 +19,7 @@ character vector containing full paths of downloaded files.
 This function needs internet connection. It does not overwrite existing files.
 }
 \description{
-Downloads rfb fixed width files from selected UFs.
+Downloads RFB fixed width files from selected UFs.
 }
 \examples{
 

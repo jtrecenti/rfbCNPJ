@@ -46,7 +46,7 @@
 #'
 #' A dataset description of participation types in RFB partner (socios) data.
 #'
-#' @format A data frame with 53940 rows and 10 variables:
+#' @format A data frame with 40 rows and 2 variables:
 #' \describe{
 #'   \item{qualificacao}{Code to be joined with company partners data}
 #'   \item{qualificacao_nm}{Description of participation type}

@@ -1,13 +1,16 @@
 Package: rfbCNPJ
-Title: Downloads and parses data from RFB
-Version: 0.1.0
+Title: Downloads and parses data from the Department of Federal Revenue in Brazil
+Version: 0.1.1
 Authors@R: person("Julio", "Trecenti", email = "jtrecenti@curso-r.com", role = c("aut", "cre"))
-Description: Downloads and parses data from official site on RFB (IDG Receita). 
-    Data are collected from IDG site (http://idg.receita.fazenda.gov.br) and 
-    updated in 2017. There are more than 9 million companies IDs and 17 million
-    partner info.
+Description: Downloads and parses data from official site on Department
+    of Federal Revenue in Brazil (Receita Federal do Brasil, RFB). Data are 
+    collected from RFB site (http://idg.receita.fazenda.gov.br). Latest update 
+    was in December 15, 2017. There are more than 9 million companies IDs and 
+    17 million partner info.
 Depends: R (>= 3.4)
 License: MIT + file LICENSE
+URL: https://github.com/jtrecenti/rfbCNPJ
+BugReports: https://github.com/jtrecenti/rfbCNPJ/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1

@@ -38,9 +38,9 @@ rfb_download_file <- function(link, path, verbose = TRUE) {
   file_name
 }
 
-#' Download rfb files
+#' Download RFB files
 #'
-#' Downloads rfb fixed width files from selected UFs.
+#' Downloads RFB fixed width files from selected UFs.
 #'
 #' @param ufs character vector of UFs to download. If \code{NULL} (default), downloads all UFs.
 #' @param path path to download the files.
