@@ -4,7 +4,7 @@
 \alias{rfb_download}
 \title{Download RFB files}
 \usage{
-rfb_download(ufs = NULL, path = ".", verbose = TRUE)
+rfb_download(ufs = NULL, path, verbose = TRUE)
 }
 \arguments{
 \item{ufs}{character vector of UFs to download. If \code{NULL} (default), downloads all UFs.}
@@ -23,8 +23,8 @@ Downloads RFB fixed width files from selected UFs.
 }
 \examples{
 
-\dontrun{
-rfb_download("AC")
-rfb_download(c("AC", "RR"))
+\donttest{
+rfb_download("AC", path = "txt_files")
+rfb_download(c("AC", "RR"), path = "txt_files")
 }
 }

@@ -4,16 +4,20 @@
 \alias{rfb_import}
 \title{Import data from binary files}
 \usage{
-rfb_import(type = c("all", "empresas", "socios"))
+rfb_import(type = c("all", "empresas", "socios"), path, remove = TRUE)
 }
 \arguments{
 \item{type}{if \code{type="all"}, download list-column tibble containing all data. If \code{type="empresas"}, downloads rectangular database of companies. If \code{type="socios"}, downloads rectangular database of partners.}
+
+\item{path}{directory name to save temporary files.}
+
+\item{remove}{remove temporary files? Default is TRUE.}
 }
 \description{
 Downloads and reads data directly from Kaggle Datasets, where we have uploaded parsed data.
 }
 \examples{
-\dontrun{
-empresas <- rfb_import("empresas")
+\donttest{
+empresas <- rfb_import("empresas", path = "rds_files")
 }
 }
