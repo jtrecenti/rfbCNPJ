@@ -6,7 +6,7 @@ Description: Downloads and parses data from official site on Department
     of Federal Revenue in Brazil (Receita Federal do Brasil, RFB). Data are 
     collected from RFB site (<http://idg.receita.fazenda.gov.br>). Latest update 
     was in December 15, 2017. There are more than 9 million companies IDs and 
-    17 million partner info.
+    17 million partner information.
 Depends: R (>= 3.4)
 License: MIT + file LICENSE
 URL: https://github.com/jtrecenti/rfbCNPJ
