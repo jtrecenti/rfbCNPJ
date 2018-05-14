@@ -54,11 +54,11 @@ rfb_download_file <- function(link, path, verbose = TRUE) {
 #'
 #' @examples
 #'
-#' \dontrun{
-#' rfb_download("AC")
-#' rfb_download(c("AC", "RR"))
+#' \donttest{
+#' rfb_download("AC", path = "txt_files")
+#' rfb_download(c("AC", "RR"), path = "txt_files")
 #' }
-rfb_download <- function(ufs = NULL, path = ".", verbose = TRUE) {
+rfb_download <- function(ufs = NULL, path, verbose = TRUE) {
   fs::dir_create(path)
   links <- rfb_get_links(ufs)
   purrr::map_chr(links, rfb_download_file, path = path, verbose = verbose)
@@ -70,14 +70,17 @@ rfb_download <- function(ufs = NULL, path = ".", verbose = TRUE) {
 #' Downloads and reads data directly from Kaggle Datasets, where we have uploaded parsed data.
 #'
 #' @param type if \code{type="all"}, download list-column tibble containing all data. If \code{type="empresas"}, downloads rectangular database of companies. If \code{type="socios"}, downloads rectangular database of partners.
+#' @param path directory name to save temporary files.
+#' @param remove remove temporary files? Default is TRUE.
 #'
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' empresas <- rfb_import("empresas")
+#' \donttest{
+#' empresas <- rfb_import("empresas", path = "rds_files")
 #' }
-rfb_import <- function(type = c("all", "empresas", "socios")) {
+rfb_import <- function(type = c("all", "empresas", "socios"),
+                       path, remove = TRUE) {
   type <- match.arg(type)
   link <- switch(
     type,
@@ -85,7 +88,7 @@ rfb_import <- function(type = c("all", "empresas", "socios")) {
     empresas = "https://www.dropbox.com/s/9h06mn9rzml4d2h/rfb_empresas.rds?dl=1",
     socios = "https://www.dropbox.com/s/67rs8fiv77gu73f/rfb_socios.rds?dl=1"
   )
-  tmp <- tempfile(fileext = ".rds")
+  tmp <- tempfile(pattern = paste0(type, "_"), fileext = ".rds", tmpdir = path)
   httr::GET(link, httr::write_disk(tmp, overwrite = TRUE), httr::progress())
   message("Download finished. Loading data into R...")
   d <- readRDS(tmp)
