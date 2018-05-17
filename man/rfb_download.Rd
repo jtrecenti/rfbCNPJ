@@ -24,7 +24,7 @@ Downloads RFB fixed width files from selected UFs.
 \examples{
 
 \donttest{
-rfb_download("AC", path = "txt_files")
-rfb_download(c("AC", "RR"), path = "txt_files")
+rfb_download("AC", path = file.path(tempdir(), "txt_files"))
+rfb_download(c("AC", "RR"), path = file.path(tempdir(), "txt_files"))
 }
 }

@@ -77,10 +77,11 @@ rfb_download <- function(ufs = NULL, path, verbose = TRUE) {
 #'
 #' @examples
 #' \donttest{
-#' empresas <- rfb_import("empresas", path = "rds_files")
+#' empresas <- rfb_import("empresas", path = file.path(tempdir(), "rds_files"))
 #' }
 rfb_import <- function(type = c("all", "empresas", "socios"),
                        path, remove = TRUE) {
+  fs::dir_create(path)
   type <- match.arg(type)
   link <- switch(
     type,

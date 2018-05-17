@@ -18,6 +18,6 @@ Downloads and reads data directly from Kaggle Datasets, where we have uploaded p
 }
 \examples{
 \donttest{
-empresas <- rfb_import("empresas", path = "rds_files")
+empresas <- rfb_import("empresas", path = file.path(tempdir(), "rds_files"))
 }
 }
