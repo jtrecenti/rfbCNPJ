@@ -55,8 +55,8 @@ rfb_download_file <- function(link, path, verbose = TRUE) {
 #' @examples
 #'
 #' \donttest{
-#' rfb_download("AC", path = "txt_files")
-#' rfb_download(c("AC", "RR"), path = "txt_files")
+#' rfb_download("AC", path = file.path(tempdir(), "txt_files"))
+#' rfb_download(c("AC", "RR"), path = file.path(tempdir(), "txt_files"))
 #' }
 rfb_download <- function(ufs = NULL, path, verbose = TRUE) {
   fs::dir_create(path)
