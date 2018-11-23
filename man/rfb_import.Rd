@@ -14,7 +14,7 @@ rfb_import(type = c("all", "empresas", "socios"), path, remove = TRUE)
 \item{remove}{remove temporary files? Default is TRUE.}
 }
 \description{
-Downloads and reads data directly from Kaggle Datasets, where we have uploaded parsed data.
+Downloads and reads data directly from Dropbox, where we have uploaded parsed data.
 }
 \examples{
 \donttest{

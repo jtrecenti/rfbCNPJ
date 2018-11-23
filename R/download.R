@@ -13,7 +13,7 @@ rfb_get_links <- function(ufs = NULL) {
     stringr::str_subset("cadastro")
 
   if (!is.null(ufs)) {
-    re_ufs <- paste(ufs, "$", sep = "", collapse = "|")
+    re_ufs <- paste(ufs, "(?=\\.txt)", sep = "", collapse = "|")
     all_links <- stringr::str_subset(all_links, re_ufs)
   }
   all_links
@@ -22,7 +22,7 @@ rfb_get_links <- function(ufs = NULL) {
 rfb_download_file <- function(link, path, verbose = TRUE) {
   file_name <- link %>%
     basename() %>%
-    stringr::str_extract("[^.]+$") %>%
+    # stringr::str_extract("[^.]+$") %>%
     fs::path(ext = "txt")
   file_name <- stringr::str_c(path, file_name, sep = "/")
   if (verbose) {
@@ -67,7 +67,7 @@ rfb_download <- function(ufs = NULL, path, verbose = TRUE) {
 
 #' Import data from binary files
 #'
-#' Downloads and reads data directly from Kaggle Datasets, where we have uploaded parsed data.
+#' Downloads and reads data directly from Dropbox, where we have uploaded parsed data.
 #'
 #' @param type if \code{type="all"}, download list-column tibble containing all data. If \code{type="empresas"}, downloads rectangular database of companies. If \code{type="socios"}, downloads rectangular database of partners.
 #' @param path directory name to save temporary files.
