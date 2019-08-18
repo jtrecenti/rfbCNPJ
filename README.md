@@ -1,5 +1,11 @@
 [![Travis-CI Build Status](https://travis-ci.org/jtrecenti/rfbCNPJ.svg?branch=master)](https://travis-ci.org/jtrecenti/rfbCNPJ) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/jtrecenti/rfbCNPJ?branch=master&svg=true)](https://ci.appveyor.com/project/jtrecenti/rfbCNPJ)[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rfbCNPJ)](https://cran.r-project.org/package=rfbCNPJ)
 
+
+# Alternativa
+
+Esse pacote está desatualizado, e existe uma alternativa mais atualizada e sofisticada [nesse link](https://github.com/georgevbsantiago/qsacnpj).
+
+
 # rfbCNPJ
 
 O pacote `rfbCNPJ` baixa e lê os arquivos contendo a lista de todas as empresas do Brasil, disponibilizado pela [Receita Federal em 15 de dezembro de 2017](http://idg.receita.fazenda.gov.br/orientacao/tributaria/cadastros/cadastro-nacional-de-pessoas-juridicas-cnpj/dados-abertos-do-cnpj). São duas tabelas por UF: i) empresas, contendo informações como CNPJ, nome da empresa e ii) socios, contendo quadro de sócios.
